@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="debug" name="RoutingTest">
+    <Scripts>
+        <Script name="selector" language="javascript"><![CDATA[
+            var result;
+            if (logEvent.getLoggerName().equals("JavascriptNoLocation")) {
+                result = "NoLocation";
+            } else if (logEvent.getMarker() != null && logEvent.getMarker().isInstanceOf("FLOW")) {
+                result = "Flow";
+            }
+            result;
+            ]]></Script>
+        <ScriptFile name="groovy.filter" path="scripts/filter.groovy"/>
+    </Scripts>
+
+    <Appenders>
+        <Console name="STDOUT">
+            <ScriptPatternSelector defaultPattern="%d %p %m%n">
+                <ScriptRef ref="selector"/>
+                <PatternMatch key="NoLocation" pattern="[%-5level] %c{1.} %msg%n"/>
+                <PatternMatch key="Flow" pattern="[%-5level] %c{1.} ====== %C{1.}.%M:%L %msg ======%n"/>
+            </ScriptPatternSelector>
+            <PatternLayout pattern="%m%n"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="EventLogger" level="info" additivity="false">
+            <ScriptFilter onMatch="ACCEPT" onMisMatch="DENY">
+                <Script name="GroovyFilter" language="groovy"><![CDATA[
+            if (logEvent.getMarker() != null && logEvent.getMarker().isInstanceOf("FLOW")) {
+                return true;
+            } else if (logEvent.getContextMap().containsKey("UserId")) {
+                return true;
+            }
+            return false;
+            ]]>
+                </Script>
+            </ScriptFilter>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+
+        <Root level="error">
+            <ScriptFilter onMatch="ACCEPT" onMisMatch="DENY">
+                <ScriptRef ref="groovy.filter"/>
+            </ScriptFilter>
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+    </Loggers>
+
+</Configuration>

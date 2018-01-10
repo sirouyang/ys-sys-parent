@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/api-client/api-client.iml" filepath="$PROJECT_DIR$/api-client/api-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api-server/api-server.iml" filepath="$PROJECT_DIR$/api-server/api-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework-core/framework-core.iml" filepath="$PROJECT_DIR$/framework-core/framework-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webapp-back-persistent/webapp-back-persistent.iml" filepath="$PROJECT_DIR$/webapp-back-persistent/webapp-back-persistent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webapp-back-service/webapp-back-service.iml" filepath="$PROJECT_DIR$/webapp-back-service/webapp-back-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webapp-back-web/webapp-back-web.iml" filepath="$PROJECT_DIR$/webapp-back-web/webapp-back-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webapp-front-persistent/webapp-front-persistent.iml" filepath="$PROJECT_DIR$/webapp-front-persistent/webapp-front-persistent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webapp-front-service/webapp-front-service.iml" filepath="$PROJECT_DIR$/webapp-front-service/webapp-front-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webapp-front-web/webapp-front-web.iml" filepath="$PROJECT_DIR$/webapp-front-web/webapp-front-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webapp-mobile-persistent/webapp-mobile-persistent.iml" filepath="$PROJECT_DIR$/webapp-mobile-persistent/webapp-mobile-persistent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webapp-mobile-service/webapp-mobile-service.iml" filepath="$PROJECT_DIR$/webapp-mobile-service/webapp-mobile-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webapp-mobile-web/webapp-mobile-web.iml" filepath="$PROJECT_DIR$/webapp-mobile-web/webapp-mobile-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ys-sys-parent.iml" filepath="$PROJECT_DIR$/ys-sys-parent.iml" />
+    </modules>
+  </component>
+</project>

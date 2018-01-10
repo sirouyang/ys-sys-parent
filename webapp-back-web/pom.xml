@@ -1,0 +1,193 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>ys-sys-parent</artifactId>
+        <groupId>com.yestic</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <!--<groupId>com.yestic.back.web</groupId>-->
+    <artifactId>webapp-back-web</artifactId>
+    <packaging>war</packaging>
+    <name>webapp-back-web</name>
+    <url>http://www.yestic.com/</url>
+    <inceptionYear>2018-2020</inceptionYear>
+    <organization>
+        <name>yestic.com</name>
+        <url>http://www.yestic.com</url>
+    </organization>
+
+    <scm>
+        <connection>scm:git:ssh://github:sirouyang/ys-sys.git</connection>
+        <url>http://github.com/sirouyang/ys-sys</url>
+        <tag>dev</tag>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>yestic</id>
+            <name>yestic</name>
+            <email>yestic@yeah.net</email>
+            <organization>Developer</organization>
+            <roles>
+                <role>Project leader</role>
+            </roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
+    <properties>
+        <!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>-->
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.yestic</groupId>
+            <artifactId>webapp-back-service</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+
+            <!--&lt;!&ndash; war打包插件, 设定war包名称不带版本号 &ndash;&gt;
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <warName>${project.build.finalName}</warName>
+                    &lt;!&ndash; 排除掉未压缩js、css &ndash;&gt;
+                    &lt;!&ndash; <warSourceExcludes>**/*.js,**/*.css,**/*.jsp</warSourceExcludes> &ndash;&gt;
+                    <archive>
+                        &lt;!&ndash; 不把maven的依赖加入 &ndash;&gt;
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                        <manifest>
+                            &lt;!&ndash; addClasspath>true</addClasspath &ndash;&gt;
+                            <addDefaultImplementationEntries>true
+                            </addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true
+                            </addDefaultSpecificationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <DisableIBMJAXWSEngine>true</DisableIBMJAXWSEngine>
+                            <Mode>development</Mode>
+                            <Url>${project.url}</Url>
+                            <Project-Version>${project.version}</Project-Version>
+                            <Project-name>${project.name}</Project-name>
+                            &lt;!&ndash;<Build-Timestamp>${build.timestamp}</Build-Timestamp>&ndash;&gt;
+                            <Build-directory>${project.build.directory}</Build-directory>
+                            <Build-java-home>${java.home}</Build-java-home>
+                            <Build-basedir>${basedir}</Build-basedir>
+                            <Build-localRepository>${settings.localRepository}
+                            </Build-localRepository>
+                            &lt;!&ndash;<Build-M2_HOME>${env.M2_HOME}</Build-M2_HOME>&ndash;&gt;
+
+                            <Build-os-arch>${os.arch}</Build-os-arch>
+                            <Build-os-name>${os.name}</Build-os-name>
+                            <Build-os-version>${os.version}</Build-os-version>
+
+                            &lt;!&ndash;<svn-Revision>${svn.revision}</svn-Revision>
+                            <svn-repository>${svn.repository}</svn-repository>
+                            <svn-mixedRevisions>${svn.mixedRevisions}
+                            </svn-mixedRevisions>
+                            <svn-committedRevision>${svn.committedRevision}
+                            </svn-committedRevision>
+                            <svn-committedDate>${svn.committedDate}</svn-committedDate>
+                            <svn-status>${svn.status}</svn-status>
+                            <svn-specialStatus>${svn.specialStatus}</svn-specialStatus>
+
+                            <SCM-Revision>${buildNumber}</SCM-Revision>&ndash;&gt;
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            &lt;!&ndash; 打包 &ndash;&gt;
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>copy-config</id>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <phase>compile</phase>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/test/resources</directory>
+                                    <includes>
+                                        <include>uglify/*</include>
+                                        <include>uglify/bin/*</include>
+                                        <include>uglify/lib/*</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            &lt;!&ndash; clean &ndash;&gt;
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>src/main/webapp/WEB-INF/classes</directory>
+                            <directory>src/main/webapp/WEB-INF/lib</directory>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+
+            &lt;!&ndash; dependency &ndash;&gt;
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            &lt;!&ndash; 使用jetty时注释掉 &ndash;&gt;
+                            <outputDirectory>src/main/webapp/WEB-INF/lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            &lt;!&ndash; enforcer &ndash;&gt;
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+            </plugin>-->
+
+        </plugins>
+
+        <finalName>webapp-back-web</finalName>
+    </build>
+
+</project>

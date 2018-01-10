@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+    xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"
+    default-autowire="byName" default-lazy-init="true">
+
+    <!-- 事务配置 -->
+    <!-- <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> 
+        <property name="dataSource" ref="dataSource" /> </bean> -->
+    <bean id="transactionManager"
+        class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <!-- 需要事务控制的业务方法配置 -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="save*" rollback-for="Exception" />
+            <tx:method name="insert*" rollback-for="Exception" />
+            <tx:method name="create*" rollback-for="Exception" />
+            <tx:method name="edit*" rollback-for="Exception" />
+            <tx:method name="update*" rollback-for="Exception" />
+            <tx:method name="set*" rollback-for="Exception" />
+            <tx:method name="delete*" rollback-for="Exception" />
+            <tx:method name="remove*" rollback-for="Exception" />
+            <tx:method name="clear*" rollback-for="Exception" />
+            <tx:method name="move*" rollback-for="Exception" />
+            <tx:method name="do*" rollback-for="Exception" />
+            <tx:method name="reset*" rollback-for="Exception" />
+            <tx:method name="start*" rollback-for="Exception" />
+            <tx:method name="add*" rollback-for="Exception" />
+            <tx:method name="change*" rollback-for="Exception" />
+            <tx:method name="admin*" rollback-for="Exception" />
+            <tx:method name="crt*" rollback-for="Exception" />
+            <tx:method name="send*" rollback-for="Exception" />
+            <tx:method name="*" read-only="true" />
+        </tx:attributes>
+    </tx:advice>
+
+    <!-- 事务控制拦截器 -->
+    <aop:config proxy-target-class="true">
+        <aop:advisor pointcut="execution(* *..service..*.*(..))"
+            advice-ref="txAdvice" />
+    </aop:config>
+
+    <!-- 支持 @Transactional 标记 -->
+    <tx:annotation-driven transaction-manager="transactionManager"
+        proxy-target-class="true" />
+</beans>
