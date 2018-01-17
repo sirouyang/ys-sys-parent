@@ -18,8 +18,8 @@
 	</organization>
 
 	<scm>
-		<connection>scm:git:ssh://github:sirouyang/ys-sys.git</connection>
-		<url>http://github.com/sirouyang/ys-sys</url>
+		<connection>scm:git:ssh://git@github.com:sirouyang/ys-sys-parent.git</connection>
+		<url>https://github.com/sirouyang/ys-sys-parent.git</url>
 		<tag>dev</tag>
 	</scm>
 

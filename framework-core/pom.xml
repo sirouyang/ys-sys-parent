@@ -51,6 +51,7 @@
         <log4jdbc.version>1.2</log4jdbc.version>
         <alibaba.druid.version>1.1.6</alibaba.druid.version>
         <alibaba.dubbo.version>2.6.0</alibaba.dubbo.version>
+        <springfox.version>2.7.0</springfox.version>
     </properties>
 
     <dependencyManagement>
@@ -243,6 +244,26 @@
         </dependency>
         <!--spring web end-->
 
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.0</version>
+            <!--<scope>provided</scope>-->
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
         <!--alibaba druid begin-->
         <!--<dependency>
             <groupId>com.alibaba</groupId>
@@ -334,6 +355,24 @@
         </dependency>-->
         <!--spring websocket end-->
 
+        <!-- swagger2 begin-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${springfox.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-spring-web</artifactId>
+            <version>${springfox.version}</version>
+        </dependency>
+        <!-- swagger2 end-->
+
         <!--spring test begin-->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -345,8 +384,27 @@
 
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>io.spring.repo.maven.release</id>
+            <url>http://repo.spring.io/release/</url>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+        <repository>
+            <id>io.spring.repo.maven.milestone</id>
+            <url>http://repo.spring.io/milestone/</url>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+        <repository>
+            <id>io.spring.repo.maven.snapshot</id>
+            <url>http://repo.spring.io/snapshot/</url>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+    </repositories>
+
     <build>
-        <outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
+        <finalName>framework-core</finalName>
+
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -359,6 +417,16 @@
         </resources>
 
         <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18.1</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
 
             <!-- 设置编译插件 -->
             <!--<plugin>
