@@ -244,6 +244,7 @@
         </dependency>
         <!--spring web end-->
 
+        <!--servlet begin-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -263,6 +264,15 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
+        <!--servlet end-->
+
+        <!--reactor 反应式编程begin-->
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+            <version>3.1.2.RELEASE</version>
+        </dependency>
+        <!--reactor 反应式编程end-->
 
         <!--alibaba druid begin-->
         <!--<dependency>
