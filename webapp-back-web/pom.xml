@@ -214,7 +214,6 @@
 
         </plugins>
 
-        <finalName>webapp-back-web</finalName>
     </build>
 
 </project>
