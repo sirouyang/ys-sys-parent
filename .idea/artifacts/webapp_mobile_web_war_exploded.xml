@@ -39,6 +39,8 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc-portlet:4.3.13.RELEASE" />
           <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:4.0.0" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: io.projectreactor:reactor-core:3.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.reactivestreams:reactive-streams:1.0.1" />
           <element id="library" level="project" name="Maven: io.springfox:springfox-swagger2:2.7.0" />
           <element id="library" level="project" name="Maven: io.swagger:swagger-annotations:1.5.13" />
           <element id="library" level="project" name="Maven: io.swagger:swagger-models:1.5.13" />

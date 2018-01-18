@@ -52,6 +52,11 @@
         <alibaba.druid.version>1.1.6</alibaba.druid.version>
         <alibaba.dubbo.version>2.6.0</alibaba.dubbo.version>
         <springfox.version>2.7.0</springfox.version>
+        <spring4.security.version>4.2.3.RELEASE</spring4.security.version>
+        <reactor.version>3.1.2.RELEASE</reactor.version>
+        <servlet3.version>3.1.0</servlet3.version>
+        <servlet4.version>4.0.0</servlet4.version>
+        <jstl.version>1.2</jstl.version>
     </properties>
 
     <dependencyManagement>
@@ -244,25 +249,26 @@
         </dependency>
         <!--spring web end-->
 
+        <!--spring security begin-->
+        <!--<dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${spring4.security.version}</version>
+        </dependency>-->
+        <!--spring security end-->
+
         <!--servlet begin-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.0</version>
+            <version>${servlet4.version}</version>
             <!--<scope>provided</scope>-->
         </dependency>
 
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
-            <version>1.2</version>
+            <version>${jstl.version}</version>
         </dependency>
         <!--servlet end-->
 
@@ -270,7 +276,7 @@
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-core</artifactId>
-            <version>3.1.2.RELEASE</version>
+            <version>${reactor.version}</version>
         </dependency>
         <!--reactor 反应式编程end-->
 
