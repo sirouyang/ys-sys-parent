@@ -82,7 +82,7 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-framework-bom</artifactId>
-                <version>${spring4.version}</version>
+                <version>${spring5.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -159,7 +159,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>${spring4.version}</version>
+            <version>${spring5.version}</version>
             <!--排除公共的日志记录（spring默认commons-logging，貌似启用slf4j会有问题）-->
             <exclusions>
                 <exclusion>
@@ -177,12 +177,12 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>${spring4.version}</version>
+            <version>${spring5.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
-            <version>${spring4.version}</version>
+            <version>${spring5.version}</version>
         </dependency>
         <!--spring springframework end-->
 
@@ -190,7 +190,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
-            <version>${spring4.version}</version>
+            <version>${spring5.version}</version>
         </dependency>
         <!--spring beans end-->
 
@@ -198,12 +198,12 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
-            <version>${spring4.version}</version>
+            <version>${spring5.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
-            <version>${spring4.version}</version>
+            <version>${spring5.version}</version>
         </dependency>
         <!--spring aop end-->
 
@@ -211,7 +211,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
-            <version>${spring4.version}</version>
+            <version>${spring5.version}</version>
         </dependency>
         <!--spring transaction end-->
 
@@ -219,7 +219,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-expression</artifactId>
-            <version>${spring4.version}</version>
+            <version>${spring5.version}</version>
         </dependency>
         <!--spring expression(Spring EL) end-->
 
@@ -227,7 +227,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-oxm</artifactId>
-            <version>${spring4.version}</version>
+            <version>${spring5.version}</version>
         </dependency>
         <!--spring o/x end-->
 
@@ -235,12 +235,12 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>${spring4.version}</version>
+            <version>${spring5.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>${spring4.version}</version>
+            <version>${spring5.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -300,7 +300,7 @@
         <!--<dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
-            <version>${spring4.version}</version>
+            <version>${spring5.version}</version>
         </dependency>-->
         <!--spring jdbc end-->
 
@@ -308,7 +308,7 @@
         <!--<dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
-            <version>${spring4.version}</version>
+            <version>${spring5.version}</version>
         </dependency>
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -354,12 +354,12 @@
         <!--<dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jms</artifactId>
-            <version>${spring4.version}</version>
+            <version>${spring5.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-messaging</artifactId>
-            <version>${spring4.version}</version>
+            <version>${spring5.version}</version>
         </dependency>-->
         <!--spring messag end-->
 
@@ -367,7 +367,7 @@
         <!--<dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-websocket</artifactId>
-            <version>${spring4.version}</version>
+            <version>${spring5.version}</version>
         </dependency>-->
         <!--spring websocket end-->
 
@@ -393,7 +393,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>${spring4.version}</version>
+            <version>${spring5.version}</version>
             <scope>test</scope>
         </dependency>
         <!--spring test end-->
