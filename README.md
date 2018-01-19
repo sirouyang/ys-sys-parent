@@ -7,13 +7,15 @@
 
 ### api-server api	服务端模块
  	api服务模块
-	
+- [ ] 设计登录功能（相关数据表、权限及资源）
+- [ ] 页面登录功能、全局Token认证
 ---
 
 ### common 	通用模块
  	通用编码、开发工具类模块
-- [ ] 设计登录功能（相关数据表、权限及资源）
-- [ ] 页面登录功能、全局Token认证
+>此模块目前基本完全参考springside-utils,本来可直接引用即可
+    springside github url:
+    https://github.com/springside/springside4.git
 ---
 
 ### framework-core 	核心开发框架模块
@@ -22,7 +24,8 @@
 - [x] druid依赖、数据库驱动依赖（已注释）
 - [x] 添加ORM(Hibernate和Mybatis)依赖（已注释）
 - [x] 添加dubbo依赖（已注释）
-- [x] 添加模板引擎依赖(目前暂定freemark，已注释)
+- [x] 添加模板引擎依赖(目前暂定FreeMarker<Thymeleaf|Enjoy|velocity>，已注释)
+- [x] 网页布局和修饰的框架(SiteMesh，未添加)
 - [x] 添加Spring Security依赖（已注释）
 - [x] 添加Spring 消息相关依赖（已注释）
 - [ ] 集成Spring5
@@ -33,6 +36,7 @@
 - [ ] 集成Dubbo
 - [ ] 集成Spring Security（配置密码加密MD5+Salt）
 - [ ] 集成模板引擎
+- [ ] 集成SiteMesh
 - [ ] 集成前端框架
 ---
 
