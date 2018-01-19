@@ -420,6 +420,22 @@
         </dependency>-->
         <!--spring websocket end-->
 
+        <!--freemark begin-->
+        <!--<dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.23</version>
+        </dependency>-->
+        <!--freemark end-->
+
+        <!--sitemesh begin-->
+        <!--<dependency>
+            <groupId>opensymphony</groupId>
+            <artifactId>sitemesh</artifactId>
+            <version>2.4.2</version>
+        </dependency>-->
+        <!--sitemesh end-->
+
         <!-- swagger2 begin-->
         <dependency>
             <groupId>io.springfox</groupId>
