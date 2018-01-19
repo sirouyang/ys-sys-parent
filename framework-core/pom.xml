@@ -53,6 +53,7 @@
         <alibaba.dubbo.version>2.6.0</alibaba.dubbo.version>
         <springfox.version>2.7.0</springfox.version>
         <spring4.security.version>4.2.3.RELEASE</spring4.security.version>
+        <spring5.security.version>5.0.0.RELEASE</spring5.security.version>
         <reactor.version>3.1.2.RELEASE</reactor.version>
         <servlet3.version>3.1.0</servlet3.version>
         <servlet4.version>4.0.0</servlet4.version>
@@ -250,12 +251,60 @@
         <!--spring web end-->
 
         <!--spring security begin-->
-        <!--<dependency>
+        <!--
+        <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
             <version>${spring4.security.version}</version>
-        </dependency>-->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring4.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring4.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-acl</artifactId>
+            <version>${spring4.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${spring4.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-crypto</artifactId>
+            <version>${spring4.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <version>${spring4.security.version}</version>
+            <scope>test</scope>
+        </dependency>
+        -->
         <!--spring security end-->
+
+        <!--spring oauth2 begin-->
+        <!--
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+            <version>2.2.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2-javaconfig</artifactId>
+            <version>1.0.0.M1</version>
+        </dependency>
+        -->
+        <!--spring oauth2 end-->
 
         <!--servlet begin-->
         <dependency>
