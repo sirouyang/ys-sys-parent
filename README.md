@@ -7,13 +7,15 @@
 
 ### api-server api	服务端模块
  	api服务模块
-	
+- [ ] 设计登录功能（相关数据表、权限及资源）
+- [ ] 页面登录功能、全局Token认证
 ---
 
 ### common 	通用模块
  	通用编码、开发工具类模块
-- [ ] 设计登录功能（相关数据表、权限及资源）
-- [ ] 页面登录功能、全局Token认证
+>此模块目前基本完全参考springside-utils,本来可直接引用即可
+    springside github url:
+    https://github.com/springside/springside4.git
 ---
 
 ### framework-core 	核心开发框架模块

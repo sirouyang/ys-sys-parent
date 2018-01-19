@@ -27,7 +27,7 @@
     <bytecodeTargetLevel>
       <module name="api-client" target="1.8" />
       <module name="api-server" target="1.8" />
-      <module name="common" target="1.8" />
+      <module name="common" target="1.7" />
       <module name="framework-core" target="1.8" />
       <module name="sys-common" target="1.8" />
       <module name="webapp-back-persist" target="1.8" />

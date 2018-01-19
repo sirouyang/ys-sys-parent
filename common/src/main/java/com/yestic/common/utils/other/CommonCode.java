@@ -1,4 +1,4 @@
-package com.yestic.common.utils;
+package com.yestic.common.utils.other;
 
 public class CommonCode {
 
