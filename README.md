@@ -18,14 +18,14 @@
 
 ### framework-core 	核心开发框架模块
 	开发框架集成模块
-- [x] 添加Spring4相关依赖
+- [x] 添加Spring5相关依赖
 - [x] druid依赖、数据库驱动依赖（已注释）
 - [x] 添加ORM(Hibernate和Mybatis)依赖（已注释）
 - [x] 添加dubbo依赖（已注释）
 - [x] 添加模板引擎依赖(目前暂定freemark，已注释)
 - [x] 添加Spring Security依赖（已注释）
 - [x] 添加Spring 消息相关依赖（已注释）
-- [ ] 集成Spring4
+- [ ] 集成Spring5
 - [ ] 集成Log4j2
 - [ ] 集成SpringMvc
 - [ ] 添加数据源
