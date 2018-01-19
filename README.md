@@ -25,6 +25,7 @@
 - [x] 添加ORM(Hibernate和Mybatis)依赖（已注释）
 - [x] 添加dubbo依赖（已注释）
 - [x] 添加模板引擎依赖(目前暂定freemark，已注释)
+- [x] 网页布局和修饰的框架(SiteMesh，未添加)
 - [x] 添加Spring Security依赖（已注释）
 - [x] 添加Spring 消息相关依赖（已注释）
 - [ ] 集成Spring4
@@ -35,6 +36,7 @@
 - [ ] 集成Dubbo
 - [ ] 集成Spring Security（配置密码加密MD5+Salt）
 - [ ] 集成模板引擎
+- [ ] 集成SiteMesh
 - [ ] 集成前端框架
 ---
 
