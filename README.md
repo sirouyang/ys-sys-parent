@@ -1,12 +1,12 @@
 ## ys-sys-parent MAVEN 	脚手架
 
 ### api-client api	客户端模块
- 	api调用模块
+ 	api客户端模块
 
 ---
 
 ### api-server api	服务端模块
- 	api服务模块
+ 	api服务端模块
 	
 ---
 
