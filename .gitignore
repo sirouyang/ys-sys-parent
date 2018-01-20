@@ -20,3 +20,67 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+.idea/workspace.xml
+api-client/api-client.iml
+api-server/api-server.iml
+common/common.iml
+framework-core/framework-core.iml
+#framework-core/src/main/resources/db/
+#framework-core/src/main/resources/druid/
+#framework-core/src/main/resources/dubbo/
+#framework-core/src/main/resources/freemark/
+#framework-core/src/main/resources/i18n/
+#framework-core/src/main/resources/mybatis/
+webapp-back-persistent/webapp-back-persistent.iml
+webapp-back-service/webapp-back-service.iml
+#webapp-back-web/src/main/java/com.yestic.back.web/controller/
+#webapp-back-web/src/main/java/com.yestic.back.web/interceptor/
+#webapp-back-web/src/main/resources/
+webapp-back-web/webapp-back-web.iml
+webapp-front-persistent/webapp-front-persistent.iml
+webapp-front-service/webapp-front-service.iml
+#webapp-front-web/src/main/resources/
+webapp-front-web/webapp-front-web.iml
+webapp-mobile-persistent/webapp-mobile-persistent.iml
+webapp-mobile-service/webapp-mobile-service.iml
+#webapp-mobile-web/src/main/resources/
+webapp-mobile-web/webapp-mobile-web.iml
+ys-sys-parent.iml
+api-client/target/generated-sources/
+api-client/target/generated-test-sources/
+api-server/target/generated-sources/
+api-server/target/generated-test-sources/
+common/target/generated-sources/
+common/target/generated-test-sources/
+framework-core/target/classes/log4j/
+framework-core/target/classes/spring/
+framework-core/target/generated-sources/
+framework-core/target/generated-test-sources/
+webapp-back-persistent/target/generated-sources/
+webapp-back-persistent/target/generated-test-sources/
+webapp-back-service/target/generated-sources/
+webapp-back-service/target/generated-test-sources/
+webapp-back-web/target/generated-sources/
+webapp-back-web/target/generated-test-sources/
+webapp-front-persistent/target/generated-sources/
+webapp-front-persistent/target/generated-test-sources/
+webapp-front-service/target/generated-sources/
+webapp-front-service/target/generated-test-sources/
+webapp-front-web/src/main/webapp/WEB-INF/classes/config/
+webapp-front-web/src/main/webapp/WEB-INF/classes/spring/
+webapp-front-web/target/generated-sources/
+webapp-front-web/target/generated-test-sources/
+webapp-mobile-persistent/target/generated-sources/
+webapp-mobile-persistent/target/generated-test-sources/
+webapp-mobile-service/target/generated-sources/
+webapp-mobile-service/target/generated-test-sources/
+webapp-mobile-web/target/generated-sources/
+webapp-mobile-web/target/generated-test-sources/
