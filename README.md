@@ -1,53 +1,74 @@
-## ys-sys-parent MAVEN 	脚手架
+# ys-sys-parent MAVEN 	脚手架
 
+## 技术选型核心依赖
+### 主干分支：master
+ 	基本的脚手架
+### 分支：spring4
+ 	核心依赖spring4、dubbo
+### 分支：spring5
+ 	核心依赖spring5、dubbo
+### 分支：spring4-cloud
+ 	核心依赖spring4、spring cloud
+### 分支：spring5-cloud
+ 	核心依赖spring5、spring cloud
+---
+    
+## 框架支持
+- [ ] Java Web
+- [ ] 分布式（服务治理、事务、任务调度等等...）
+- [ ] 消息
+- [ ] WebSocket
+- [ ] 缓存
+---
+
+## 模块详情  
 ### api-client api	客户端模块
  	api调用模块
-
 ---
 
 ### api-server api	服务端模块
  	api服务模块
-- [ ] 设计登录功能（相关数据表、权限及资源）
-- [ ] 页面登录功能、全局Token认证
+ - [ ] 设计登录功能（相关数据表、权限及资源）
+ - [ ] 页面登录功能、全局Token认证
 ---
 
 ### common 	通用模块
  	通用编码、开发工具类模块
->此模块目前基本完全参考springside-utils,本来可直接引用即可
-    springside github url:
-    https://github.com/springside/springside4.git
+ 	此模块目前基本完全参考springside-utils,
+ 	本来直接引用即可、这里图个高端就源码直接Copy了，
+ 	springside github url:
+ 	https://github.com/springside/springside4.git
 ---
 
 ### framework-core 	核心开发框架模块
-	开发框架集成模块
-- [x] 添加Spring4相关依赖
-- [x] druid依赖、数据库驱动依赖（已注释）
-- [x] 添加ORM(Hibernate和Mybatis)依赖（已注释）
-- [x] 添加dubbo依赖（已注释）
-- [x] 添加模板引擎依赖(目前暂定FreeMarker<Thymeleaf|Enjoy|velocity>，已注释)
-- [x] 网页布局和修饰的框架(SiteMesh，未添加)
-- [x] 添加Spring Security依赖（已注释）
-- [x] 添加Spring 消息相关依赖（已注释）
-- [ ] 集成Spring4
-- [ ] 集成Log4j2
-- [ ] 集成SpringMvc
-- [ ] 添加数据源
-- [ ] 集成ORM
-- [ ] 集成Dubbo
-- [ ] 集成Spring Security（配置密码加密MD5+Salt）
-- [ ] 集成模板引擎
-- [ ] 集成SiteMesh
-- [ ] 集成前端框架
+ 	开发框架集成模块
+ - [x] 添加Spring4相关依赖
+ - [x] druid依赖、数据库驱动依赖（已注释）
+ - [x] 添加ORM(Hibernate和Mybatis)依赖（已注释）
+ - [x] 添加dubbo依赖（已注释）
+ - [x] 添加模板引擎依赖(目前暂定FreeMarker<Thymeleaf|Enjoy|velocity，已注释)
+ - [x] 网页布局和修饰的框架(SiteMesh，未添加)
+ - [x] 添加Spring Security依赖（已注释）
+ - [x] 添加Spring 消息相关依赖（已注释）
+ - [ ] 集成Spring4
+ - [ ] 集成Log4j2
+ - [ ] 集成SpringMvc
+ - [ ] 添加数据源
+ - [ ] 集成ORM
+ - [ ] 集成Dubbo
+ - [ ] 集成Spring Security（配置密码加密MD5+Salt）
+ - [ ] 集成模板引擎
+ - [ ] 集成SiteMesh
+ - [ ] 集成前端框架
 ---
-
 
 ### webapp-back-*	web端后台模块
 #### 	webapp-back-persistent  
-	web端后台-持久化模块
+ 	web端后台-持久化模块
 #### 	webapp-back-service 
-	web端后台-业务处理模块
-#### 	webapp-back-web         
-	web端后台-视图模块
+ 	web端后台-业务处理模块
+#### webapp-back-web         
+ 	web端后台-视图模块
 - [ ] 后台系统管理-用户管理
 - [ ] 后台系统管理-权限管理
 - [ ] 后台系统管理-资源管理
@@ -55,18 +76,17 @@
 
 ### webapp-front-* 	web端前台模块
 #### 	webapp-front-persistent 
-	web端前台-持久化模块
+ 	web端前台-持久化模块
 #### 	webapp-front-service  
-	web端前台-业务处理模块
+ 	web端前台-业务处理模块
 #### 	webapp-front-web       
-	web端前台-视图模块
-	
+ 	web端前台-视图模块
 ---
 
 ### webapp-mobile-* 	web端移动端模块 
 #### 	webapp-mobile-persistent 
-	web移动端-持久化模块
+ 	web移动端-持久化模块
 #### 	webapp-mobile-service
-	web移动端-业务处理模块
+ 	web移动端-业务处理模块
 #### 	webapp-mobile-web        
-	web移动端-视图模块
+ 	web移动端-视图模块
