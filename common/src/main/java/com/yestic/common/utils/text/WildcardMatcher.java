@@ -37,7 +37,7 @@ import com.google.common.base.Splitter;
  * Checks whether a string or path matches a given wildcard pattern. Possible patterns allow to match single characters
  * ('?') or any count of characters ('*'). Wildcard characters can be escaped (by an '\'). When matching path, deep tree
  * wildcard also can be used ('**').
- * <p>
+ *
  * This method uses recursive matching, as in linux or windows. regexp works the same. This method is very fast,
  * comparing to similar implementations.
  */

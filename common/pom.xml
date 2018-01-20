@@ -126,12 +126,12 @@
         <!-- TEST end -->
     </dependencies>
 
-    <distributionManagement>
+    <!--<distributionManagement>
         <snapshotRepository>
             <id>ss-sonatype-snapshots</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
-    </distributionManagement>
+    </distributionManagement>-->
 
     <build>
             <plugins>

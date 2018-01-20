@@ -81,7 +81,7 @@ public final class SortedArrayList<E> extends ArrayList<E> { // NOSONAR
 	 * Adds an Object to sorted list. Object is inserted at correct place, found
 	 * using binary search. If the same item exist, it will be put to the end of
 	 * the range.
-	 * <p>
+	 *
 	 * This method breaks original list contract since objects are not
 	 * added at the list end, but in sorted manner.
 	 */

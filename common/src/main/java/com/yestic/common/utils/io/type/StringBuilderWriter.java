@@ -23,7 +23,7 @@ import java.io.Writer;
  * JDK的java.io.StringWriter使用StringBuffer，移植Commons IO使用StringBuilder的版本.
  * 
  * {@link Writer} implementation that outputs to a {@link StringBuilder}.
- * <p>
+ *
  * <strong>NOTE:</strong> This implementation, as an alternative to
  * <code>java.io.StringWriter</code>, provides an <i>un-synchronized</i>
  * (i.e. for use in a single thread) implementation for better performance.
@@ -57,7 +57,7 @@ public class StringBuilderWriter extends Writer implements Serializable {
     /**
      * Constructs a new instance with the specified {@link StringBuilder}.
      * 
-     * <p>If {@code builder} is null a new instance with default capacity will be created.</p>
+     * If {@code builder} is null a new instance with default capacity will be created.</p>
      *
      * @param builder The String builder. May be null.
      */
