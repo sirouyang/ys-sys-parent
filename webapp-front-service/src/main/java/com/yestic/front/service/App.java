@@ -1,4 +1,4 @@
-package com.yestic;
+package com.yestic.front.service;
 
 /**
  * Hello world!
