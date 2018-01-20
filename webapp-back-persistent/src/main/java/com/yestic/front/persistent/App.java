@@ -1,4 +1,4 @@
-package com.yestic.front.web.persist;
+package com.yestic.front.persistent;
 
 /**
  * Hello world!
