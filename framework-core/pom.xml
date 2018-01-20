@@ -58,6 +58,7 @@
         <servlet3.version>3.1.0</servlet3.version>
         <servlet4.version>4.0.0</servlet4.version>
         <jstl.version>1.2</jstl.version>
+        <aspectj.version>1.8.13</aspectj.version>
     </properties>
 
     <dependencyManagement>
@@ -192,6 +193,12 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
             <version>${spring4.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!--spring beans end-->
 
@@ -200,6 +207,12 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
             <version>${spring4.version}</version>
+        </dependency>
+        <!-- 面向切面框架AspectJ -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
