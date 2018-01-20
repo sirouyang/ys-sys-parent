@@ -1,4 +1,4 @@
-package com.yestic.front.web.web;
+package com.yestic.front.web;
 
 public class App {
 
