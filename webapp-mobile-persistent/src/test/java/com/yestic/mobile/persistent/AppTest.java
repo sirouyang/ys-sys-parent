@@ -1,4 +1,4 @@
-package com.yestic;
+package com.yestic.mobile.persistent;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
