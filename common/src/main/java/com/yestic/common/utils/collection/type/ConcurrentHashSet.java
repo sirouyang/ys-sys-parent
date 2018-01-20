@@ -27,63 +27,78 @@ public class ConcurrentHashSet<E> extends AbstractSet<E> implements Set<E>, java
 		s = m.keySet();
 	}
 
-	public void clear() {
+	@Override
+    public void clear() {
 		m.clear();
 	}
 
-	public int size() {
+	@Override
+    public int size() {
 		return m.size();
 	}
 
-	public boolean isEmpty() {
+	@Override
+    public boolean isEmpty() {
 		return m.isEmpty();
 	}
 
-	public boolean contains(Object o) {
+	@Override
+    public boolean contains(Object o) {
 		return m.containsKey(o);
 	}
 
-	public boolean remove(Object o) {
+	@Override
+    public boolean remove(Object o) {
 		return m.remove(o) != null;
 	}
 
-	public boolean add(E e) {
+	@Override
+    public boolean add(E e) {
 		return m.put(e, Boolean.TRUE) == null;
 	}
 
-	public Iterator<E> iterator() {
+	@Override
+    public Iterator<E> iterator() {
 		return s.iterator();
 	}
 
-	public Object[] toArray() {
+	@Override
+    public Object[] toArray() {
 		return s.toArray();
 	}
 
-	public <T> T[] toArray(T[] a) {
+	@Override
+    public <T> T[] toArray(T[] a) {
 		return s.toArray(a);
 	}
 
-	public String toString() {
+	@Override
+    public String toString() {
 		return s.toString();
 	}
 
-	public int hashCode() {
+	@Override
+    public int hashCode() {
 		return s.hashCode();
 	}
 
-	public boolean equals(Object o) {
+	@Override
+    public boolean equals(Object o) {
 		return o == this || s.equals(o);
 	}
 
-	public boolean containsAll(Collection<?> c) {
+	@Override
+    public boolean containsAll(Collection<?> c) {
 		return s.containsAll(c);
 	}
 
-	public boolean removeAll(Collection<?> c) {
+	@Override
+    public boolean removeAll(Collection<?> c) {
 		return s.removeAll(c);
 	}
 
-	public boolean retainAll(Collection<?> c) {
+	@Override
+    public boolean retainAll(Collection<?> c) {
 		return s.retainAll(c);
 	}
 }
