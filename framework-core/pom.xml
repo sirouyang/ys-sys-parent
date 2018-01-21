@@ -113,6 +113,17 @@
             <artifactId>jcl-over-slf4j</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <!--&lt;!&ndash;<dependency>-->
+            <!--<groupId>org.slf4j</groupId>-->
+            <!--<artifactId>slf4j-log4j12</artifactId>-->
+            <!--<version>${slf4j.version}</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>&ndash;&gt;-->
         <!--slf4j end-->
 
         <!--log4j2 begin-->
@@ -126,18 +137,22 @@
             <artifactId>log4j-core</artifactId>
             <version>${log4j.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-jcl</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>
+        <!--&lt;!&ndash;<dependency>-->
+            <!--<groupId>org.apache.logging.log4j</groupId>-->
+            <!--<artifactId>log4j-jcl</artifactId>-->
+            <!--<version>${log4j.version}</version>-->
+        <!--</dependency>&ndash;&gt;-->
         <!--用于与slf4j保持桥接-->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j-impl</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>
-        <!--log4j web（web应用需要这个？？？）-->
+        <!--log4j官网提示
+        永远不要尝试使用SLF4J适配器（log4j-to-slf4j-2.x.jar）和SLF4J桥接器（log4j-slf4j-impl-2.x.jar），
+        因为它会导致事件无休止地在SLF4J和Log4j 2。
+        -->
+        <!--&lt;!&ndash;<dependency>-->
+            <!--<groupId>org.apache.logging.log4j</groupId>-->
+            <!--<artifactId>log4j-slf4j-impl</artifactId>-->
+            <!--<version>${log4j.version}</version>-->
+        <!--</dependency>&ndash;&gt;-->
+        <!--log4j web（web应用需要这个，）-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-web</artifactId>
