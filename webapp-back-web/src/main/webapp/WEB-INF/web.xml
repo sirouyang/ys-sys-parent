@@ -74,9 +74,9 @@
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
-
+  <!--配置 "/" 不配置 "/*" 的原因，当返回视图时 "/XXX/xxx" 会再次被拦截-->
   <servlet-mapping>
     <servlet-name>springDispatcherServlet</servlet-name>
-    <url-pattern>/*</url-pattern>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
 </web-app>
