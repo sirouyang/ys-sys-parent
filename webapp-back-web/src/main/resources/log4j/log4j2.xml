@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Log4j 2.x 配置文件。每30秒自动检查和应用配置文件的更新； -->
+<Configuration status="warn" monitorInterval="30" strict="true" schema="Log4J-V2.2.xsd">
+    <Properties>
+        <Property name="fileName">back.log</Property>
+        <Property name="backupFilePatch">${log4j:configParentLocation}/logs/</Property>
+    </Properties>
+    <Appenders>
+        <!-- 输出到控制台 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <!-- 需要记录的级别 -->
+            <!-- <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY" /> -->
+            <!--<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L:%M) - %m - %msg%xEx%n" />-->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L:%M) - %m" />
+        </Console>
+
+        <!-- 输出到文件，按天或者超过10MB分割 -->
+        <RollingFile name="RollingFile" fileName="${fileName}.log" filePattern="${backupFilePatch}$${date:yyyy-MM}/${fileName}-%d{yyyy-MM-dd}-%i.log.gz">
+            <!-- 需要记录的级别 -->
+            <!-- <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY" /> -->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L:%M) - %m" />
+            <Policies>
+                <OnStartupTriggeringPolicy />
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB" />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <!-- 3rdparty Loggers -->
+        <logger name="org.springframework.core" level="info"></logger>
+        <logger name="org.springframework.beans" level="info"></logger>
+        <logger name="org.springframework.context" level="info"></logger>
+        <logger name="org.springframework.web" level="info"></logger>
+        <Root level="info"> <!-- 全局配置 -->
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+        <!-- 为sql语句配置特殊的Log级别，方便调试 -->
+        <!--<Logger name="com.yestic.back.service" level="${log.sql.level}" additivity="false">
+            <AppenderRef ref="Console" />
+        </Logger>-->
+    </Loggers>
+</Configuration>

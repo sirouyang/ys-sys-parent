@@ -58,6 +58,7 @@
         <servlet3.version>3.1.0</servlet3.version>
         <servlet4.version>4.0.0</servlet4.version>
         <jstl.version>1.2</jstl.version>
+        <aspectj.version>1.8.13</aspectj.version>
     </properties>
 
     <dependencyManagement>
@@ -91,6 +92,11 @@
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>com.yestic</groupId>
+            <artifactId>common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <!--相关压测对比log4j logback log4j2性能、不管是异步还是同步下log4j2性能最高
         ps:貌似单独的应用的话slf4j无用处，如果用作其他应用引用的话slf4j能基本减少对其日志的影响
         -->
@@ -107,6 +113,17 @@
             <artifactId>jcl-over-slf4j</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <!--&lt;!&ndash;<dependency>-->
+            <!--<groupId>org.slf4j</groupId>-->
+            <!--<artifactId>slf4j-log4j12</artifactId>-->
+            <!--<version>${slf4j.version}</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>&ndash;&gt;-->
         <!--slf4j end-->
 
         <!--log4j2 begin-->
@@ -120,18 +137,22 @@
             <artifactId>log4j-core</artifactId>
             <version>${log4j.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-jcl</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>
+        <!--&lt;!&ndash;<dependency>-->
+            <!--<groupId>org.apache.logging.log4j</groupId>-->
+            <!--<artifactId>log4j-jcl</artifactId>-->
+            <!--<version>${log4j.version}</version>-->
+        <!--</dependency>&ndash;&gt;-->
         <!--用于与slf4j保持桥接-->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j-impl</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>
-        <!--log4j web（web应用需要这个？？？）-->
+        <!--log4j官网提示
+        永远不要尝试使用SLF4J适配器（log4j-to-slf4j-2.x.jar）和SLF4J桥接器（log4j-slf4j-impl-2.x.jar），
+        因为它会导致事件无休止地在SLF4J和Log4j 2。
+        -->
+        <!--&lt;!&ndash;<dependency>-->
+            <!--<groupId>org.apache.logging.log4j</groupId>-->
+            <!--<artifactId>log4j-slf4j-impl</artifactId>-->
+            <!--<version>${log4j.version}</version>-->
+        <!--</dependency>&ndash;&gt;-->
+        <!--log4j web（web应用需要这个，）-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-web</artifactId>
@@ -206,6 +227,12 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
             <version>${spring4.version}</version>
+        </dependency>
+        <!-- 面向切面框架AspectJ -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -358,6 +385,19 @@
             <version>${spring4.version}</version>
         </dependency>-->
         <!--spring jdbc end-->
+
+        <!--jpa begin-->
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>1.0.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>2.0.2.RELEASE</version>
+        </dependency>
+        <!--jpa end-->
 
         <!--spring orm begin-->
         <!--<dependency>

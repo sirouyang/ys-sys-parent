@@ -1,13 +1,84 @@
+<!--
 <!DOCTYPE web-app PUBLIC
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
+-->
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <!--
+  Servlet3.0及以上Tomcat等服务器（需要Tomcat版本为7.0及以上）会自动加载log4j2以及在src路径（classpath）下的log4j2.xml文件，
+  不过你也可以在web.xml中设置isLog4jAutoInitializationDisabled元素为true就可以禁止java服务器自动加载log4j2.
+  如果你设置了禁用自动加载或者你的Servlet版本为2.5（log4j2不支持2.4及以下版本），可以在web.xml添加listener元素：
+  （值得注意的是你必须把这些listener和filter放在spring等一些servlet之前哦，也就是放在第一位）
+  -->
+  <!-- log4j -->
+  <context-param>
+    <param-name>isLog4jAutoInitializationDisabled</param-name>
+    <param-value>true</param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
+  </listener>
+
+  <filter>
+    <filter-name>log4jServletFilter</filter-name>
+    <filter-class>org.apache.logging.log4j.web.Log4jServletFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>log4jServletFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>INCLUDE</dispatcher>
+    <dispatcher>ERROR</dispatcher>
+    <dispatcher>ASYNC</dispatcher><!-- Servlet 3.0 w/disabled auto-initialization only; not supported in 2.5 -->
+  </filter-mapping>
+
+  <!--<context-param>
+    <param-name>isLog4jContextSelectorNamed</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  <context-param>
+    <param-name>log4jContextName</param-name>
+    <param-value>appWithJndiSelector</param-value>
+  </context-param>-->
 
   <context-param>
     <!-- 日志配置文件路径 -->
+    <!--
+1.如果提供了一个位置，它将被搜索为一个servlet上下文资源。例如，如果 log4jConfiguration包含“logging.xml”，则Log4j将在Web应用程序的根目录中查找具有该名称的文件。
+2.如果未定义位置，Log4j将搜索WEB-INF目录中以“log4j2”开头的文件。如果找到多个文件，并且存在以“log4j2- name ” 开头的文件，其中 name是Web应用程序的名称，则会使用该文件。否则，将使用第一个文件。
+3.使用类路径和文件URL的“正常”搜索序列将用于定位配置文件。
+    -->
     <param-name>log4jConfiguration</param-name>
-    <param-value>classpath:**/log4j/log4j2-bak.xml</param-value>
+    <param-value>classpath:/log4j/log4j2.xml</param-value>
   </context-param>
+
+  <!-- 启动 Spring 的IOC容器 -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:/spring/spring-beans.xml</param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <servlet>
+    <servlet-name>springDispatcherServlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:/spring/spring-mvc.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <!--配置 "/" 不配置 "/*" 的原因，当返回视图时 "/XXX/xxx" 会再次被拦截-->
+  <servlet-mapping>
+    <servlet-name>springDispatcherServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
 </web-app>
