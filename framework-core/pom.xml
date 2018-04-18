@@ -38,8 +38,8 @@
     </developers>
 
     <properties>
-        <spring4.version>4.3.13.RELEASE</spring4.version>
-        <spring5.version>5.0.2.RELEASE</spring5.version>
+        <spring4.version>4.3.16.RELEASE</spring4.version>
+        <spring5.version>5.0.5.RELEASE</spring5.version>
         <hibernate5.version>5.2.12.Final</hibernate5.version>
         <spring.hibernate.version>1.2.9</spring.hibernate.version>
         <mybatis.version>3.4.5</mybatis.version>
