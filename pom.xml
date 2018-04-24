@@ -10,11 +10,11 @@
 
 	<name>ys-sys-parent</name>
 	<description>ys-sys-parent project for Spring</description>
-	<url>http://www.yestic.com/</url>
+	<url>http://www.yestic.cn/</url>
 	<inceptionYear>2018-2020</inceptionYear>
 	<organization>
 		<name>yestic.com</name>
-		<url>http://www.yestic.com</url>
+		<url>http://www.yestic.cn</url>
 	</organization>
 
 	<scm>
@@ -53,24 +53,24 @@
 		<repository>
 			<id>yestic-releases</id>
 			<name>yestic Releases Releases</name>
-			<url>http://www.yestic.com:8081/nexus/content/repositories/releases</url>
+			<url>http://www.yestic.cn:8081/nexus/content/repositories/releases</url>
 		</repository>
 		<snapshotRepository>
 			<id>yestic-snapshots</id>
 			<name>yestic Snapshots Repository</name>
-			<url>http://www.yestic.com:8081/nexus/content/repositories/snapshots</url>
+			<url>http://www.yestic.cn:8081/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 		&lt;!&ndash; <repository> <id>yestic-releases</id> <name>Nexus Release Repository</name>
-			<url>http://www.yestic.com:8081/nexus/content/repositories/releases</url> </repository>
+			<url>http://www.yestic.cn:8081/nexus/content/repositories/releases</url> </repository>
 			<snapshotRepository> <id>yestic-snapshots</id> <name>Nexus Snapshot Repository</name>
-			<url>http://www.yestic.com:8081/nexus/content/repositories/snapshots</url> </snapshotRepository> &ndash;&gt;
+			<url>http://www.yestic.cn:8081/nexus/content/repositories/snapshots</url> </snapshotRepository> &ndash;&gt;
 	</distributionManagement>-->
 
 	<!--<repositories>
 		<repository>
 			<id>nexus</id>
 			<name>yestic Nexus Repository</name>
-			<url>http://www.yestic.com:8081/nexus/content/groups/public</url>
+			<url>http://www.yestic.cn:8081/nexus/content/groups/public</url>
 		</repository>
 	</repositories>-->
 
@@ -79,7 +79,7 @@
 			<pluginRepository>
 				<id>nexus</id>
 				<name>yestic Nexus Repository</name>
-				<url>http://www.yestic.com/nexus/content/groups/public</url>
+				<url>http://www.yestic.cn/nexus/content/groups/public</url>
 				<snapshots>
 					<enabled>false</enabled>
 				</snapshots>
