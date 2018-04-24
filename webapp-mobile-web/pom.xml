@@ -10,11 +10,11 @@
     <artifactId>webapp-mobile-web</artifactId>
     <packaging>war</packaging>
     <name>webapp-mobile-web</name>
-    <url>http://www.yestic.com/</url>
+    <url>http://www.yestic.cn/</url>
     <inceptionYear>2018-2020</inceptionYear>
     <organization>
         <name>yestic.com</name>
-        <url>http://www.yestic.com</url>
+        <url>http://www.yestic.cn</url>
     </organization>
 
     <scm>
