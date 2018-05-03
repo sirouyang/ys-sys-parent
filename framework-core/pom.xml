@@ -58,6 +58,7 @@
         <servlet3.version>3.1.0</servlet3.version>
         <servlet4.version>4.0.0</servlet4.version>
         <jstl.version>1.2</jstl.version>
+        <lombok.version>1.16.20</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -462,6 +463,13 @@
             <scope>test</scope>
         </dependency>
         <!--spring test end-->
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
     </dependencies>
 
